@@ -73,16 +73,8 @@ keys = [
     Key([alt], "t", lazy.window.toggle_floating()),
 ]
 
-groups = [
-    Group("1"),
-    Group("2"),
-    Group("3"),
-    Group("4"),
-    Group("5"),
-    Group("6"),
-    Group("7"),
-    Group("8"),
-]
+groups = [ Group(str(n)) for n in range(1, 9) ]
+
 for i in groups:
     keys.append(
         Key([sup], i.name, lazy.group[i.name].toscreen())
